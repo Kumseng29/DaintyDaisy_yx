@@ -1,0 +1,451 @@
+*{
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/*NAV SECTION*/
+.navbar{
+  background: #002f48;
+  height: 80px;
+  display: flex; justify-content: center; align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbarContainer{
+  display: flex; justify-content: space-between;
+  height: 80px; width: 100%; max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+  z-index: 1;
+}
+
+#navbarLogo{
+  background: #CC95C0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-size: 100%;
+  -webkit-background-clip: text; -moz-background-clip: text; 
+  -webkit-text-fill-color: transparent; -moz-text-fill-color: transparent;
+  display: flex; align-items: center; 
+  cursor: pointer;
+  text-decoration: none; font-size: 2rem;
+}
+
+.navbarMenu{
+  display: flex; align-items: center; 
+  list-style: none;
+}
+
+.navbarItem{
+  height: 80px;
+}
+
+.navbarLinks{
+  display: flex; align-items: center; justify-content: center;
+  width: 130px; height: 100%;
+  color: white; text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbarBtn{
+  display: flex; justify-content: center; align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.button{
+  display: flex; justify-content: center; align-items: center;
+  text-decoration: none; 
+  padding: 10px 20px; border: none; outline: none; border-radius: 18px;
+  height: 100%; width: 100%; 
+  background: #d3e3eb;  /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: rgb(4, 4, 45);
+  transition: all 0.3s ease;
+}
+
+.navbarLinks:hover{
+  color: #9518fc; transition: all 0.3s ease;
+}
+
+
+/*RESPONSIVE (NAV) SECTION*/
+@media screen and (max-width: 960px) {
+  .navbarContainer{
+    display: flex; justify-content: space-between; 
+    height: 80px; width: 100%; max-width: 1300px;
+    z-index: 1;
+    padding: 0;
+  }
+
+  .navbarMenu{
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+
+  .navbarMenu.active{
+    background: #131313;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 60vh;
+    font-size: 1.6rem;
+  }
+
+  #navbarLogo{
+    padding-left: 25px;
+  }
+
+  .navbarToggle .bar{
+    width: 25px; height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: white;
+  }
+
+  .navbarItem{
+    width: 100%;
+  }
+
+  .navbarLinks{
+    text-align: center; 
+    padding: 2rem;
+    width: 100%; 
+    display: table;
+  }
+
+  .navbarBtn{
+    padding-bottom: 2rem;
+  }
+
+  .button{
+    display: flex; justify-content: center; align-items: center;
+    width: 80%; height: 80px; 
+    margin: 0;
+  }
+
+  #mobileMenu{
+    position: absolute; 
+    top: 20%; right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  .navbarToggle .bar{
+    display: block;
+    cursor: pointer;
+  }
+
+  #mobileMenu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobileMenu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobileMenu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+/*HERO SECTION*/
+.hero{
+  background: rgb(236,218,178);
+  background: linear-gradient(90deg, rgba(236,218,178,1) 0%, rgba(147,215,228,1) 100%);
+  padding: 150px 0;
+}
+
+.heroContainer{
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80%;
+  text-align: center;
+  padding: 30px;
+}
+
+.heroHeading{
+  font-size: 120px;
+  margin-bottom: 36px;
+  font-family: 'Italiana', sans-serif;
+}
+
+.heroDescription{
+  font-size: 42px;
+  font-family: 'Mrs Saint Delafield', cursive;
+}
+
+
+/*RESPONSIVE (NAV) SECTION*/
+@media screen and (max-width: 700px) {
+
+  .heroHeading{
+    font-size: 100px;
+  }
+
+  .heroDescription{
+    font-size: 27px;
+  }
+}
+
+
+/*ABOUT SECTION*/
+.main{
+  background-color: #D4E4EC;
+  padding: 40px 0;
+}
+
+.mainHeading{
+  font-family: 'Italiana',sans-serif;
+  font-size: 55px;
+  padding: 5px;
+  margin: 5px auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.mainContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center; 
+  justify-content: center;
+  margin: 0 auto;
+  height: 90%; 
+  width: 100%;
+  max-width: 1300px;
+  z-index: 1;
+}
+
+.mainCard{
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mainCard img{
+  margin-bottom: 30px;
+  padding: 8px;
+}
+
+
+@media screen and (max-width: 950px) {
+  .mainHeading {font-size: 40px;}
+
+  .mainContent h2 {
+    font-size: 20px;
+  }
+
+  .mainContent h4 {
+    font-size: 15px;
+  }
+
+  .mainContent p span {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .mainContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mainHeading {font-size: 40px;}
+
+  .mainContent h2 {
+    font-size: 18px;
+  }
+
+  .mainContent h4 {
+    font-size: 14px;
+  }
+
+  .mainContent p span {
+    font-size: 10px;
+  }
+
+  .mainContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; 
+    justify-content: center;
+    margin: 0 auto;
+    height: 90%; 
+    width: 100%;
+    max-width: 1300px;
+    z-index: 1;
+  }
+}
+
+/*PRODUCT SECTION*/
+.products{
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 5rem 0;
+}
+
+.products h1 {
+  font-family: 'Italiana', sans-serif;
+  font-size: 50px;
+}
+
+.productsWrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin-top: 2rem;
+}
+
+.productCard{
+  margin: 10px;
+  height: 425px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.productImg img{
+  height: 380px;
+  width: 300px;
+  padding: 20px;
+  object-fit: fill;
+}
+
+@media screen and (max-width: 1280px) {
+  .productsWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .productsWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .productsWrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+
+}
+
+/*FOOTER CSS*/
+.socialMedia{
+  background-color: #1a3f50;
+  padding: 4rem 0;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialMediaWrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: auto;
+}
+
+#footerLogo{
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.websiteRights{
+  color: white;
+}
+
+.socialIcons i{
+  height: 14px;
+  color: white;
+  margin-right: 30px;
+  size: 20px;
+}
+
+.footerLogo{
+  height: 88px;
+}
+
+@media screen and (max-width: 1060px){
+  .socialMedia{
+    background-color: #1a3f50;
+    padding: 4rem 0;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+  }
+
+  .socialMediaWrap{
+    display: inline-block;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: auto;
+    padding-left: 40px;
+  }
+
+  #footerLogo{
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .websiteRights{
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .socialIcons i{
+    height: 14px;
+    color: white;
+    margin-right: 30px;
+    size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .footerLogo{
+    height: 100px;
+    margin-bottom: 40px;
+  }
+}
